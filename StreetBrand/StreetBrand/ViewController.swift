@@ -18,6 +18,9 @@ class ViewController: UIViewController, UITextFieldDelegate,UIImagePickerControl
 
     @IBOutlet weak var photoImageView: UIImageView!
     
+    
+    @IBOutlet weak var ratingControl: RatingControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Handle the text field’s user input through delegate callbacks.
@@ -60,10 +63,7 @@ class ViewController: UIViewController, UITextFieldDelegate,UIImagePickerControl
 //Action
     
 
-    @IBAction func setDefaultLabelText(_ sender: UIButton) {
-        StreetBrandLabel.text = "Default Text"
 
-    }
 
     @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
         // Hide the keyboard.
