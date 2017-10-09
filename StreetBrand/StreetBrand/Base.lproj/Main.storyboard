@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PLx-1d-aIz">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,25 +10,79 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Your Brands-->
+        <scene sceneID="4Fx-HL-m3W">
+            <objects>
+                <tableViewController id="SoQ-f6-ilv" customClass="BrandTableViewController" customModule="StreetBrand" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xTx-hC-HN0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BrandTableViewCell" rowHeight="90" id="i7q-nU-EHW" customClass="BrandTableViewCell" customModule="StreetBrand" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="i7q-nU-EHW" id="8LI-Ng-jEi">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="dqp-0M-14E">
+                                            <rect key="frame" x="8" y="0.0" width="97" height="90"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kVj-ha-Iqd" customClass="RatingControl" customModule="StreetBrand" customModuleProvider="target">
+                                            <rect key="frame" x="113" y="18" width="252" height="64"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </stackView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OVp-OK-Cj6">
+                                            <rect key="frame" x="113" y="0.0" width="252" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="OVp-OK-Cj6" id="hhp-IV-pp1"/>
+                                    <outlet property="photoImageView" destination="dqp-0M-14E" id="ENz-ML-zOh"/>
+                                    <outlet property="ratingControl" destination="kVj-ha-Iqd" id="tCx-gb-rWx"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="SoQ-f6-ilv" id="pvZ-gJ-6mK"/>
+                            <outlet property="delegate" destination="SoQ-f6-ilv" id="FnB-nc-VMm"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Your Brands" id="IgE-py-vts">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="4L8-Qp-oqa">
+                            <connections>
+                                <segue destination="fy7-tZ-QKk" kind="presentation" identifier="AddItem" id="MUM-RA-Hj5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="ShowDetail" id="DyI-U0-9C1"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sfb-3s-txR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-500" y="-1.3493253373313345"/>
+        </scene>
+        <!--New Brand-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="StreetBrand" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="BrandViewController" customModule="StreetBrand" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="eNC-0S-THx">
-                                <rect key="frame" x="16" y="40" width="343" height="58.5"/>
+                                <rect key="frame" x="16" y="84" width="343" height="30"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Street Brand" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6G-Cy-lYM">
-                                        <rect key="frame" x="123.5" y="0.0" width="96.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="type street brand" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HLR-yw-pQM">
-                                        <rect key="frame" x="0.0" y="28.5" width="343" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
@@ -38,15 +92,6 @@
                                     <constraint firstAttribute="trailing" secondItem="HLR-yw-pQM" secondAttribute="trailing" id="utp-Mt-nyJ"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EIA-aR-nFo">
-                                <rect key="frame" x="167" y="106" width="41" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <gestureRecognizers/>
-                                <state key="normal" title="Photo"/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="acz-kL-evp" appends="YES" id="89j-Jv-cbg"/>
-                                </connections>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8HL-0C-wHe" customClass="RatingControl" customModule="StreetBrand" customModuleProvider="target">
                                 <rect key="frame" x="65" y="565" width="251" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -60,10 +105,19 @@
                                 </userDefinedRuntimeAttributes>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="eLs-2a-Q1T">
-                                <rect key="frame" x="30" y="144" width="320" height="321"/>
+                                <rect key="frame" x="30" y="157" width="320" height="321"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EIA-aR-nFo">
+                                <rect key="frame" x="167" y="119" width="41" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <state key="normal" title="Photo"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="acz-kL-evp" appends="YES" id="89j-Jv-cbg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
@@ -74,24 +128,76 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="New Brand" id="vXh-j7-nMj">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="DmE-aX-QSw">
+                            <connections>
+                                <action selector="cancel:" destination="BYZ-38-t0r" id="6mB-sv-zmr"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="cXz-T7-Hxj">
+                            <connections>
+                                <segue destination="1Ql-fh-sFF" kind="unwind" unwindAction="unwindToBrandListWithSender:" id="Dln-W7-dF6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="StreetBrandLabel" destination="T6G-Cy-lYM" id="Vfb-xd-WWN"/>
                         <outlet property="nameTextField" destination="HLR-yw-pQM" id="eIv-Ai-Rg6"/>
                         <outlet property="photoImageView" destination="eLs-2a-Q1T" id="rTM-rb-wMP"/>
                         <outlet property="ratingControl" destination="8HL-0C-wHe" id="ppW-JC-n1u"/>
+                        <outlet property="saveButton" destination="cXz-T7-Hxj" id="ko6-YH-se9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="1Ql-fh-sFF" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="acz-kL-evp">
                     <connections>
                         <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="uEL-gd-9j5"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="104.8" y="1.3493253373313345"/>
+            <point key="canvasLocation" x="1294" y="0.0"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="k5Z-Mo-7cJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PLx-1d-aIz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KvP-GQ-uxe">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="SoQ-f6-ilv" kind="relationship" relationship="rootViewController" id="2gU-1g-ktp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hjP-zc-oTB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1276" y="-1"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pSy-0L-fAX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fy7-tZ-QKk" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="O1L-mm-U8h">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="wLt-qR-QQs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gtV-Yt-CMD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="401" y="433"/>
         </scene>
     </scenes>
     <resources>
-        <image name="defaultPhoto" width="250" height="357"/>
+        <image name="defaultPhoto" width="255" height="255"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="DyI-U0-9C1"/>
+    </inferredMetricsTieBreakers>
 </document>
