@@ -6,3 +6,5 @@
   * For the ios app with firebase email account login in UI, please download the "StreetBrand_firebase_finish.zip" and execute "StreetBrand.xcworkspace" file in it.
   
   * For video Demo, please download iosapp_demo_c.mp4
+  
+  * For the sprint please check https://trello.com/b/KPCUwybD/ios-app
